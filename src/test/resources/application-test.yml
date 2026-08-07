@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: port-ops
+  datasource:
+    url: jdbc:tc:postgresql:16-alpine:///portops
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    open-in-view: false
+  flyway:
+    enabled: false
+
+app:
+  jwt:
+    secret: portops-jwt-test-secret-key-for-testing-only-must-be-at-least-256-bits-long-enough
+    expiration-ms: 3600000
+    issuer: port-ops-test
+
+logging:
+  level:
+    com.portops: DEBUG
